@@ -11,7 +11,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btn_skin_default.setOnClickListener { SkinCompatManager.getInstance().restoreDefaultTheme() }
-        btn_skin_red.setOnClickListener { SkinCompatManager.getInstance().loadSkin("red", SkinCompatManager.SKIN_LOADER_STRATEGY_BUILD_IN) }
+        btn_skin_red.setOnClickListener {
+            SkinCompatManager.getInstance().loadSkin("red", SkinCompatManager.SKIN_LOADER_STRATEGY_BUILD_IN)
+        }
         btn_next.setOnClickListener { SecondActivity.launch(this@MainActivity) }
     }
 }
