@@ -41,4 +41,5 @@ dependencies {
     implementation 'skin.support:skin-support-design:4.0.1'
     implementation 'skin.support:skin-support-cardview:4.0.1'
     implementation 'skin.support:skin-support-constraint-layout:4.0.1'
+    implementation 'com.google.code.gson:gson:2.8.5'
 }
