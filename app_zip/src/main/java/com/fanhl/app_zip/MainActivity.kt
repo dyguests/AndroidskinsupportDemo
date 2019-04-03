@@ -2,6 +2,7 @@ package com.fanhl.app_zip
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.fanhl.app_zip.skin.SkinLoader
 import kotlinx.android.synthetic.main.activity_main.*
 import skin.support.SkinCompatManager
 
@@ -12,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         btn_skin_default.setOnClickListener { SkinCompatManager.getInstance().restoreDefaultTheme() }
         btn_skin_red.setOnClickListener {
-            SkinCompatManager.getInstance().loadSkin("red", SkinCompatManager.SKIN_LOADER_STRATEGY_BUILD_IN)
+            SkinCompatManager.getInstance().loadSkin("red", SkinLoader.SKIN_LOADER_STRATEGY_ZIP)
         }
     }
 }
