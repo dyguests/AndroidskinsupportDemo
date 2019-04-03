@@ -4,29 +4,22 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable
 import skin.support.SkinCompatManager
+import skin.support.load.SkinSDCardLoader
+import skin.support.utils.SkinFileUtils
+import java.io.File
+import java.util.HashMap
 
-// object ZipSDCardLoader : SkinCompatManager.SkinLoaderStrategy {
-//     override fun getColorStateList(context: Context?, skinName: String?, resId: Int): ColorStateList {
-//         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//     }
-//
-//     override fun getColor(context: Context?, skinName: String?, resId: Int): ColorStateList {
-//         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//     }
-//
-//     override fun loadSkinInBackground(context: Context?, skinName: String?): String {
-//         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//     }
-//
-//     override fun getType(): Int {
-//         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//     }
-//
-//     override fun getTargetResourceEntryName(context: Context?, skinName: String?, resId: Int): String {
-//         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//     }
-//
-//     override fun getDrawable(context: Context?, skinName: String?, resId: Int): Drawable {
-//         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//     }
-// }
+object ZipSDCardLoader : SkinSDCardLoader() {
+    /**简单的缓存每次读到的图片*/
+    var imgs = HashMap<Int, Drawable>()
+    var colors: Map<String, String> = HashMap()
+
+    override fun getType(): Int {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun getSkinPath(context: Context?, skinName: String?): String {
+        return File(SkinFileUtils.getSkinDir(context), skinName).absolutePath
+    }
+
+}
