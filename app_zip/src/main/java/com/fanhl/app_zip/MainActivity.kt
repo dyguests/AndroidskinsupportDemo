@@ -33,9 +33,9 @@ class MainActivity : AppCompatActivity() {
 
     private val sDzip by lazy { appTheme + File.separator + redZip }
 
-    private val sDAppTheme = appTheme + File.separator + "red"
+    private val sDAppTheme by lazy { appTheme + File.separator + "red" }
 
-    val colors = sDAppTheme + File.separator + "colors.json"
+    val colors by lazy { sDAppTheme + File.separator + "colors.json" }
 
     /**
      * 为全仅用于测试

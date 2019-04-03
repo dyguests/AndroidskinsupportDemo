@@ -20,5 +20,6 @@ object SkinLoader : SkinSDCardLoader() {
 
     override fun getSkinPath(context: Context?, skinName: String?): String {
         return File(SkinFileUtils.getSkinDir(context), skinName).absolutePath
+
     }
 }
